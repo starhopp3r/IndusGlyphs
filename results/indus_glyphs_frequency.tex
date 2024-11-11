@@ -1,172 +1,210 @@
 \documentclass{article}
 \usepackage{fontspec}
-\usepackage{graphicx} % Import graphicx package for resizing
-\usepackage[a4paper, margin=0.5in]{geometry} % Set small margins for maximum table width
-\usepackage{longtable} % Import longtable package for multi-page tables
-\newfontface\textIndus[Path=./]{IndusFont.ttf} % Define custom font face for Unicode characters
+\usepackage{graphicx}
+\usepackage[a4paper, margin=0.5in]{geometry}
+\usepackage{longtable}
+\newfontface\textIndus[Path=./]{IndusFont.ttf}
 \begin{document}
-% Define the table with longtable for multi-page support
+\begin{center}
+\section*{Indus Glyphs in Order of Their Frequency for Each Substring}
+\end{center}
 \begin{longtable}{|l|p{0.8\textwidth}|}
 \hline
-\textbf{Substring} & \textbf{Unicode Characters by Frequency (Left to Right in Descending Order)} \\
+\textbf{Substring} & \textbf{Indus Glyphs by Frequency (Left to Right in Descending Order)} \\
 \hline
-\endfirsthead % Define the header for the first page
+\endfirsthead
 \hline
-\textbf{Substring} & \textbf{Unicode Characters by Frequency (Left to Right in Descending Order)} \\
+\textbf{Substring} & \textbf{Indus Glyphs by Frequency (Left to Right in Descending Order)} \\
 \hline
-\endhead % Define the header for each subsequent page
+\endhead
 \hline
 \endfoot
 \hline
 \endlastfoot
- & \textIndus{        } \\
-  & \textIndus{} \\
- a & \textIndus{} \\
-. & \textIndus{   } \\
-.a & \textIndus{} \\
-a & \textIndus{                                               } \\
-aa & \textIndus{                                                   } \\
-aaa & \textIndus{         } \\
-aan & \textIndus{} \\
-aaravaa & \textIndus{} \\
-abaa & \textIndus{} \\
-ada & \textIndus{ } \\
-adaa & \textIndus{} \\
-aja & \textIndus{} \\
-ajaa & \textIndus{ } \\
-ak & \textIndus{} \\
-aka & \textIndus{  } \\
-akaa & \textIndus{} \\
-ala & \textIndus{} \\
-ama & \textIndus{      } \\
-amaa & \textIndus{     } \\
-amataa & \textIndus{ } \\
-an & \textIndus{                           } \\
-ana & \textIndus{} \\
-anaa & \textIndus{     } \\
-anaara & \textIndus{} \\
-anan & \textIndus{ } \\
-ananan & \textIndus{} \\
-annaa & \textIndus{ } \\
-antaraa & \textIndus{} \\
-apa & \textIndus{} \\
-ara & \textIndus{  } \\
-araa & \textIndus{ } \\
-arkaraa & \textIndus{} \\
-as & \textIndus{                                               } \\
-asaa & \textIndus{       } \\
-asaas & \textIndus{   } \\
-asas & \textIndus{} \\
-asi & \textIndus{ } \\
-asvaa & \textIndus{} \\
-ata & \textIndus{  } \\
-ataa & \textIndus{     } \\
-atmaa & \textIndus{} \\
-ava & \textIndus{} \\
-avaa & \textIndus{} \\
-ayaa & \textIndus{ } \\
-b & \textIndus{      } \\
-ba & \textIndus{             } \\
-baba & \textIndus{ } \\
-bada & \textIndus{} \\
-c & \textIndus{      } \\
-ca & \textIndus{        } \\
-caa & \textIndus{} \\
-cara & \textIndus{} \\
-d & \textIndus{             } \\
-da & \textIndus{                                        } \\
-daa & \textIndus{    } \\
-daada & \textIndus{ } \\
-dad & \textIndus{} \\
-dada & \textIndus{  } \\
-dadada & \textIndus{} \\
-dak & \textIndus{} \\
-di & \textIndus{} \\
-g & \textIndus{} \\
-ga & \textIndus{} \\
-i & \textIndus{    } \\
-ii & \textIndus{} \\
-iri & \textIndus{ } \\
-isan & \textIndus{} \\
-j & \textIndus{   } \\
-ja & \textIndus{        } \\
-jar & \textIndus{} \\
-jara & \textIndus{} \\
-jas & \textIndus{} \\
-ji & \textIndus{} \\
-k & \textIndus{     } \\
-ka & \textIndus{                     } \\
-kara & \textIndus{} \\
-ki & \textIndus{} \\
-l & \textIndus{    } \\
-la & \textIndus{                       } \\
-lala & \textIndus{} \\
-m & \textIndus{                    } \\
-ma & \textIndus{                                                              } \\
-maa & \textIndus{ } \\
-maan & \textIndus{} \\
-maha & \textIndus{} \\
-mama & \textIndus{ } \\
-mara & \textIndus{ } \\
-mi & \textIndus{} \\
-n & \textIndus{       } \\
-na & \textIndus{                } \\
-naaman & \textIndus{} \\
-naan & \textIndus{} \\
-nadan & \textIndus{} \\
-naktan & \textIndus{} \\
-namaa & \textIndus{  } \\
-namama & \textIndus{} \\
-nan & \textIndus{  } \\
-naran & \textIndus{  } \\
-narasan & \textIndus{} \\
-nasan & \textIndus{      } \\
-navana & \textIndus{} \\
-navanaa & \textIndus{} \\
-p & \textIndus{   } \\
-pa & \textIndus{        } \\
-paa & \textIndus{ } \\
-pada & \textIndus{} \\
-papa & \textIndus{} \\
-para & \textIndus{} \\
-r & \textIndus{                  } \\
-ra & \textIndus{                                                                } \\
-raa & \textIndus{ } \\
-raaa & \textIndus{} \\
-raja & \textIndus{} \\
-raka & \textIndus{} \\
-raktaa & \textIndus{} \\
-rar & \textIndus{} \\
-rara & \textIndus{ } \\
-ras & \textIndus{  } \\
-ri & \textIndus{   } \\
-s & \textIndus{               } \\
-sa & \textIndus{                                                } \\
-saa & \textIndus{} \\
-saata & \textIndus{} \\
-sadas & \textIndus{ } \\
-saksa & \textIndus{} \\
-saksaa & \textIndus{ } \\
-samas & \textIndus{ } \\
-san & \textIndus{ } \\
-sara & \textIndus{} \\
-saras & \textIndus{ } \\
-sas & \textIndus{ } \\
-sava & \textIndus{} \\
-t & \textIndus{           } \\
-ta & \textIndus{                                                         } \\
-taaa & \textIndus{} \\
-taas & \textIndus{} \\
-tara & \textIndus{    } \\
-tata & \textIndus{  } \\
-u & \textIndus{        } \\
-v & \textIndus{  } \\
-va & \textIndus{            } \\
-vava & \textIndus{} \\
-y & \textIndus{                } \\
-ya & \textIndus{                                          } \\
-yaa & \textIndus{} \\
-yaaa & \textIndus{} \\
-yaaya & \textIndus{} \\
+/ / & \textIndus{} \\ \hline
+/ / (canonical) & \textIndus{} \\ \hline
+/ a/ & \textIndus{} \\ \hline
+/ a/ (canonical) & \textIndus{} \\ \hline
+/./ & \textIndus{} \\ \hline
+/./ (canonical) & \textIndus{} \\ \hline
+/.a/ & \textIndus{} \\ \hline
+/.a/ (canonical) & \textIndus{} \\ \hline
+/a/ & \textIndus{} \\ \hline
+/a/ (canonical) & \textIndus{} \\ \hline
+/aa/ & \textIndus{} \\ \hline
+/aa/ (canonical) & \textIndus{} \\ \hline
+/aaa/ & \textIndus{} \\ \hline
+/aan/ & \textIndus{} \\ \hline
+/aaravaa/ & \textIndus{} \\ \hline
+/abaa/ & \textIndus{} \\ \hline
+/ada/ & \textIndus{} \\ \hline
+/adaa/ & \textIndus{} \\ \hline
+/aja/ & \textIndus{} \\ \hline
+/ajaa/ & \textIndus{} \\ \hline
+/ak/ & \textIndus{} \\ \hline
+/aka/ & \textIndus{} \\ \hline
+/akaa/ & \textIndus{} \\ \hline
+/ala/ & \textIndus{} \\ \hline
+/ama/ & \textIndus{} \\ \hline
+/amaa/ & \textIndus{} \\ \hline
+/amataa/ & \textIndus{} \\ \hline
+/an/ & \textIndus{} \\ \hline
+/an/ (canonical) & \textIndus{} \\ \hline
+/ana/ & \textIndus{} \\ \hline
+/anaa/ & \textIndus{} \\ \hline
+/anaara/ & \textIndus{} \\ \hline
+/anan/ & \textIndus{} \\ \hline
+/ananan/ & \textIndus{} \\ \hline
+/annaa/ & \textIndus{} \\ \hline
+/antaraa/ & \textIndus{} \\ \hline
+/apa/ & \textIndus{} \\ \hline
+/ara/ & \textIndus{} \\ \hline
+/araa/ & \textIndus{} \\ \hline
+/as/ & \textIndus{} \\ \hline
+/as/ (canonical) & \textIndus{} \\ \hline
+/asaa/ & \textIndus{} \\ \hline
+/asaas/ & \textIndus{} \\ \hline
+/asas/ & \textIndus{} \\ \hline
+/asi/ & \textIndus{} \\ \hline
+/asvaa/ & \textIndus{} \\ \hline
+/ata/ & \textIndus{} \\ \hline
+/ataa/ & \textIndus{} \\ \hline
+/atmaa/ & \textIndus{} \\ \hline
+/ava/ & \textIndus{} \\ \hline
+/avaa/ & \textIndus{} \\ \hline
+/ayaa/ & \textIndus{} \\ \hline
+/b/ & \textIndus{} \\ \hline
+/b/ (canonical) & \textIndus{} \\ \hline
+/ba/ & \textIndus{} \\ \hline
+/ba/ (canonical) & \textIndus{} \\ \hline
+/baba/ & \textIndus{} \\ \hline
+/bada/ & \textIndus{} \\ \hline
+/c/ & \textIndus{} \\ \hline
+/c/ (canonical) & \textIndus{} \\ \hline
+/ca/ & \textIndus{} \\ \hline
+/ca/ (canonical) & \textIndus{} \\ \hline
+/caa/ & \textIndus{} \\ \hline
+/cara/ & \textIndus{} \\ \hline
+/d/ & \textIndus{} \\ \hline
+/d/ (canonical) & \textIndus{} \\ \hline
+/da/ & \textIndus{} \\ \hline
+/da/ (canonical) & \textIndus{} \\ \hline
+/daa/ & \textIndus{} \\ \hline
+/daada/ & \textIndus{} \\ \hline
+/dad/ & \textIndus{} \\ \hline
+/dada/ & \textIndus{} \\ \hline
+/dadada/ & \textIndus{} \\ \hline
+/dak/ & \textIndus{} \\ \hline
+/di/ & \textIndus{} \\ \hline
+/g/ & \textIndus{} \\ \hline
+/g/ (canonical) & \textIndus{} \\ \hline
+/ga/ & \textIndus{} \\ \hline
+/ga/ (canonical) & \textIndus{} \\ \hline
+/i/ & \textIndus{} \\ \hline
+/i/ (canonical) & \textIndus{} \\ \hline
+/ii/ & \textIndus{} \\ \hline
+/iri/ & \textIndus{} \\ \hline
+/isan/ & \textIndus{} \\ \hline
+/j/ & \textIndus{} \\ \hline
+/j/ (canonical) & \textIndus{} \\ \hline
+/ja/ & \textIndus{} \\ \hline
+/ja/ (canonical) & \textIndus{} \\ \hline
+/jara/ & \textIndus{} \\ \hline
+/jas/ & \textIndus{} \\ \hline
+/ji/ & \textIndus{} \\ \hline
+/k/ & \textIndus{} \\ \hline
+/k/ (canonical) & \textIndus{} \\ \hline
+/ka/ & \textIndus{} \\ \hline
+/ka/ (canonical) & \textIndus{} \\ \hline
+/kara/ & \textIndus{} \\ \hline
+/ki/ & \textIndus{} \\ \hline
+/l/ & \textIndus{} \\ \hline
+/l/ (canonical) & \textIndus{} \\ \hline
+/la/ & \textIndus{} \\ \hline
+/la/ (canonical) & \textIndus{} \\ \hline
+/lala/ & \textIndus{} \\ \hline
+/m/ & \textIndus{} \\ \hline
+/m/ (canonical) & \textIndus{} \\ \hline
+/ma/ & \textIndus{} \\ \hline
+/ma/ (canonical) & \textIndus{} \\ \hline
+/maa/ & \textIndus{} \\ \hline
+/maan/ & \textIndus{} \\ \hline
+/maha/ & \textIndus{} \\ \hline
+/mama/ & \textIndus{} \\ \hline
+/mara/ & \textIndus{} \\ \hline
+/mi/ & \textIndus{} \\ \hline
+/n/ & \textIndus{} \\ \hline
+/n/ (canonical) & \textIndus{} \\ \hline
+/na/ & \textIndus{} \\ \hline
+/na/ (canonical) & \textIndus{} \\ \hline
+/naaman/ & \textIndus{} \\ \hline
+/naan/ & \textIndus{} \\ \hline
+/nadan/ & \textIndus{} \\ \hline
+/naktan/ & \textIndus{} \\ \hline
+/namaa/ & \textIndus{} \\ \hline
+/namama/ & \textIndus{} \\ \hline
+/nan/ & \textIndus{} \\ \hline
+/naran/ & \textIndus{} \\ \hline
+/narasan/ & \textIndus{} \\ \hline
+/nasan/ & \textIndus{} \\ \hline
+/navana/ & \textIndus{} \\ \hline
+/navanaa/ & \textIndus{} \\ \hline
+/p/ & \textIndus{} \\ \hline
+/p/ (canonical) & \textIndus{} \\ \hline
+/pa/ & \textIndus{} \\ \hline
+/pa/ (canonical) & \textIndus{} \\ \hline
+/paa/ & \textIndus{} \\ \hline
+/pada/ & \textIndus{} \\ \hline
+/papa/ & \textIndus{} \\ \hline
+/para/ & \textIndus{} \\ \hline
+/r/ & \textIndus{} \\ \hline
+/r/ (canonical) & \textIndus{} \\ \hline
+/ra/ & \textIndus{} \\ \hline
+/ra/ (canonical) & \textIndus{} \\ \hline
+/raa/ & \textIndus{} \\ \hline
+/raaa/ & \textIndus{} \\ \hline
+/raja/ & \textIndus{} \\ \hline
+/raktaa/ & \textIndus{} \\ \hline
+/rar/ & \textIndus{} \\ \hline
+/rara/ & \textIndus{} \\ \hline
+/ras/ & \textIndus{} \\ \hline
+/ri/ & \textIndus{} \\ \hline
+/s/ & \textIndus{} \\ \hline
+/s/ (canonical) & \textIndus{} \\ \hline
+/sa/ & \textIndus{} \\ \hline
+/sa/ (canonical) & \textIndus{} \\ \hline
+/saa/ & \textIndus{} \\ \hline
+/saata/ & \textIndus{} \\ \hline
+/sadas/ & \textIndus{} \\ \hline
+/saksaa/ & \textIndus{} \\ \hline
+/samas/ & \textIndus{} \\ \hline
+/samas/ (canonical) & \textIndus{} \\ \hline
+/san/ & \textIndus{} \\ \hline
+/sara/ & \textIndus{} \\ \hline
+/saras/ & \textIndus{} \\ \hline
+/sas/ & \textIndus{} \\ \hline
+/sava/ & \textIndus{} \\ \hline
+/t/ & \textIndus{} \\ \hline
+/t/ (canonical) & \textIndus{} \\ \hline
+/ta/ & \textIndus{} \\ \hline
+/ta/ (canonical) & \textIndus{} \\ \hline
+/taaa/ & \textIndus{} \\ \hline
+/taas/ & \textIndus{} \\ \hline
+/tara/ & \textIndus{} \\ \hline
+/tata/ & \textIndus{} \\ \hline
+/tata/ (canonical) & \textIndus{} \\ \hline
+/u/ & \textIndus{} \\ \hline
+/u/ (canonical) & \textIndus{} \\ \hline
+/v/ & \textIndus{} \\ \hline
+/v/ (canonical) & \textIndus{} \\ \hline
+/va/ & \textIndus{} \\ \hline
+/va/ (canonical) & \textIndus{} \\ \hline
+/vava/ & \textIndus{} \\ \hline
+/y/ & \textIndus{} \\ \hline
+/y/ (canonical) & \textIndus{} \\ \hline
+/ya/ & \textIndus{} \\ \hline
+/ya/ (canonical) & \textIndus{} \\ \hline
+/yaa/ & \textIndus{} \\ \hline
+/yaaa/ & \textIndus{} \\ \hline
 \end{longtable}
 \end{document}
