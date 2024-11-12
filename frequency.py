@@ -150,30 +150,31 @@ class IndusAnalyzer:
 
 
     def generate_latex_rows(self) -> List[str]:
-        """Generate LaTeX table rows."""
+        """Generate LaTeX table rows with frequencies as percentages and added spacing between glyphs."""
         latex_rows = []
         df = self.create_frequency_dataframe()
         for substring in df['Substring'].unique():
             # Regular forms
             regular_forms = df[(df['Substring'] == substring) & (~df['IsCanonical'])]
             if not regular_forms.empty:
-                unicode_values = [chr(int(u[2:], 16)) for u in regular_forms['Unicode']]
+                glyphs_with_percents = []
+                total_frequency = regular_forms['Frequency'].sum()
+                for idx, row in regular_forms.iterrows():
+                    unicode_char = chr(int(row['Unicode'][2:], 16))
+                    frequency = int(row['Frequency'])
+                    percentage = (frequency / total_frequency) * 100
+                    percentage_str = f"{percentage:.1f}%"
+                    escaped_percentage = self.escape_latex(percentage_str)
+                    escaped_glyph = self.escape_latex(unicode_char)
+                    glyph_latex = f"\\textIndus{{{escaped_glyph}}}$_{{{escaped_percentage}}}$"
+                    glyphs_with_percents.append(glyph_latex)
+                # Add spacing between glyphs
+                spacing = ' \\quad '
+                glyphs_latex_string = spacing.join(glyphs_with_percents)
                 escaped_substring = self.escape_latex(substring)
-                unicode_string = ''.join(unicode_values)
-                escaped_unicode_string = self.escape_latex(unicode_string)
                 latex_rows.append(
-                    f"/{escaped_substring}/ & \\textIndus{{{escaped_unicode_string}}} \\\\ \\hline"
+                    f"/{escaped_substring}/ & {glyphs_latex_string} \\\\ \\hline"
                 )
-            # # Canonical forms
-            # canonical_forms = df[(df['Substring'] == substring) & (df['IsCanonical'])]
-            # if not canonical_forms.empty:
-            #     unicode_values = [chr(int(u[2:], 16)) for u in canonical_forms['Unicode']]
-            #     escaped_substring = self.escape_latex(f"{substring}")
-            #     unicode_string = ''.join(unicode_values)
-            #     escaped_unicode_string = self.escape_latex(unicode_string)
-            #     latex_rows.append(
-            #         f"/{escaped_substring}/ (canonical) & \\textIndus{{{escaped_unicode_string}}} \\\\ \\hline"
-            #     )
         return latex_rows
 
 
