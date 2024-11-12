@@ -96,14 +96,14 @@ class IndusAnalyzer:
                 if substring and unicode_val:
                     self.substring_unicode_frequency[substring][unicode_val] += 1
                     logger.debug(f"Mapped {substring} -> {unicode_val}")
-            # Map canonical forms if available
-            if not pd.isnull(row['canonized']):
-                canonical_unicode = [f'\\u{ord(c):04x}' for c in row['canonized']]
-                if len(substrings) == len(canonical_unicode):
-                    for substring, unicode_val in zip(substrings, canonical_unicode):
-                        if substring and unicode_val:
-                            self.substring_unicode_frequency[f"{substring}_canonical"][unicode_val] += 1
-                            logger.debug(f"Mapped canonical {substring} -> {unicode_val}")
+            # # Map canonical forms if available
+            # if not pd.isnull(row['canonized']):
+            #     canonical_unicode = [f'\\u{ord(c):04x}' for c in row['canonized']]
+            #     if len(substrings) == len(canonical_unicode):
+            #         for substring, unicode_val in zip(substrings, canonical_unicode):
+            #             if substring and unicode_val:
+            #                 self.substring_unicode_frequency[f"{substring}_canonical"][unicode_val] += 1
+            #                 logger.debug(f"Mapped canonical {substring} -> {unicode_val}")
 
 
     def create_frequency_dataframe(self) -> pd.DataFrame:
@@ -164,16 +164,16 @@ class IndusAnalyzer:
                 latex_rows.append(
                     f"/{escaped_substring}/ & \\textIndus{{{escaped_unicode_string}}} \\\\ \\hline"
                 )
-            # Canonical forms
-            canonical_forms = df[(df['Substring'] == substring) & (df['IsCanonical'])]
-            if not canonical_forms.empty:
-                unicode_values = [chr(int(u[2:], 16)) for u in canonical_forms['Unicode']]
-                escaped_substring = self.escape_latex(f"{substring}")
-                unicode_string = ''.join(unicode_values)
-                escaped_unicode_string = self.escape_latex(unicode_string)
-                latex_rows.append(
-                    f"/{escaped_substring}/ (canonical) & \\textIndus{{{escaped_unicode_string}}} \\\\ \\hline"
-                )
+            # # Canonical forms
+            # canonical_forms = df[(df['Substring'] == substring) & (df['IsCanonical'])]
+            # if not canonical_forms.empty:
+            #     unicode_values = [chr(int(u[2:], 16)) for u in canonical_forms['Unicode']]
+            #     escaped_substring = self.escape_latex(f"{substring}")
+            #     unicode_string = ''.join(unicode_values)
+            #     escaped_unicode_string = self.escape_latex(unicode_string)
+            #     latex_rows.append(
+            #         f"/{escaped_substring}/ (canonical) & \\textIndus{{{escaped_unicode_string}}} \\\\ \\hline"
+            #     )
         return latex_rows
 
 
@@ -254,18 +254,18 @@ class IndusAnalyzer:
                 most_frequent = regular.iloc[0]
                 print(f"Most frequent glyph: {chr(int(most_frequent['Unicode'][2:], 16))} "
                       f"({most_frequent['Frequency']} occurrences)")
-            # Canonical forms
-            canonical = frequency_df[
-                (frequency_df['Substring'] == substring) & 
-                (frequency_df['IsCanonical'])
-            ]
-            if not canonical.empty:
-                print("\nCanonical forms:")
-                print(f"Total occurrences: {canonical['Frequency'].sum()}")
-                print(f"Unique glyphs: {len(canonical)}")
-                most_frequent = canonical.iloc[0]
-                print(f"Most frequent glyph: {chr(int(most_frequent['Unicode'][2:], 16))} "
-                      f"({most_frequent['Frequency']} occurrences)")
+            # # Canonical forms
+            # canonical = frequency_df[
+            #     (frequency_df['Substring'] == substring) & 
+            #     (frequency_df['IsCanonical'])
+            # ]
+            # if not canonical.empty:
+            #     print("\nCanonical forms:")
+            #     print(f"Total occurrences: {canonical['Frequency'].sum()}")
+            #     print(f"Unique glyphs: {len(canonical)}")
+            #     most_frequent = canonical.iloc[0]
+            #     print(f"Most frequent glyph: {chr(int(most_frequent['Unicode'][2:], 16))} "
+            #           f"({most_frequent['Frequency']} occurrences)")
 
 
 def main():
